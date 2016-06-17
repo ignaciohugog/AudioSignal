@@ -6,6 +6,8 @@
 //  Copyright © 2016 Ignacio H. Gomez. All rights reserved.
 //
 
+#import <AudioToolbox/AudioToolbox.h>
+
 #ifndef Header_h
 #define Header_h
 
@@ -18,6 +20,19 @@
 #define kNumberBuffers 3
 
 	// Player
+
+typedef struct {
+	AudioStreamBasicDescription mDataFormat;
+	AudioQueueRef mQueue;
+	AudioQueueBufferRef mBuffers[kNumberBuffers];
+	SInt64 mCurrentPacket;
+	UInt32 mNumPacketsToRead;
+	UInt32 bufferByteSize;
+	bool mIsRunning;
+	const char * message;
+	UInt32 messageLength;
+	float mTheta;
+} AQPlayState;
 
 static const unsigned char playerParityTable[256] =
 {

@@ -13,13 +13,12 @@ class ViewController: UIViewController {
 	@IBOutlet weak var sendTextView: UITextField!
 	@IBOutlet weak var receiveTextView: UITextField!
 
-	var playState = AMPlayer()
+	var playState = AudioPlayer()
 	var recordState = AMRecorder()
 
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTextView) name:@"incoming" object:nil];
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.update(_:)), name: "incoming", object: nil)
 		// Do any additional setup after loading the view, typically from a nib.
 	}

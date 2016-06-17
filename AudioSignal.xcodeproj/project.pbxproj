@@ -16,8 +16,9 @@
 		4F1269E81D11C21400D6CFC6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1269E61D11C21400D6CFC6 /* AudioToolbox.framework */; };
 		4F1269EA1D11C22900D6CFC6 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1269E91D11C22900D6CFC6 /* CoreAudio.framework */; };
 		4F1269ED1D13A38100D6CFC6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269EC1D13A38100D6CFC6 /* Utils.swift */; };
-		4F1269F61D14428700D6CFC6 /* AMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269F31D14428700D6CFC6 /* AMPlayer.m */; };
+		4F1269F61D14428700D6CFC6 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269F31D14428700D6CFC6 /* AudioPlayer.m */; };
 		4F1269F71D14428700D6CFC6 /* AMRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269F51D14428700D6CFC6 /* AMRecorder.m */; };
+		4F77D3A91D148E1500D3DBA6 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F77D3A81D148E1500D3DBA6 /* PlayerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +34,13 @@
 		4F1269E91D11C22900D6CFC6 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		4F1269EC1D13A38100D6CFC6 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4F1269EE1D143FBF00D6CFC6 /* AudioSignal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioSignal-Bridging-Header.h"; sourceTree = "<group>"; };
-		4F1269F21D14428700D6CFC6 /* AMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPlayer.h; sourceTree = "<group>"; };
-		4F1269F31D14428700D6CFC6 /* AMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPlayer.m; sourceTree = "<group>"; };
+		4F1269F21D14428700D6CFC6 /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
+		4F1269F31D14428700D6CFC6 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
 		4F1269F41D14428700D6CFC6 /* AMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMRecorder.h; sourceTree = "<group>"; };
 		4F1269F51D14428700D6CFC6 /* AMRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMRecorder.m; sourceTree = "<group>"; };
 		4F1269F81D1442D400D6CFC6 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		4F77D3A71D148E1500D3DBA6 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
+		4F77D3A81D148E1500D3DBA6 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,9 @@
 			children = (
 				4F1269EB1D11C2DA00D6CFC6 /* Frameworks */,
 				4F1269D11D11BCAA00D6CFC6 /* AppDelegate.swift */,
+				4F77D3A61D148DA500D3DBA6 /* Recorder */,
+				4F77D3A51D148D9900D3DBA6 /* Player */,
+				4F1269F81D1442D400D6CFC6 /* Header.h */,
 				4F1269D31D11BCAA00D6CFC6 /* ViewController.swift */,
 				4F1269EC1D13A38100D6CFC6 /* Utils.swift */,
 				4F1269D51D11BCAA00D6CFC6 /* Main.storyboard */,
@@ -89,16 +95,31 @@
 		4F1269EB1D11C2DA00D6CFC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F1269F21D14428700D6CFC6 /* AMPlayer.h */,
-				4F1269F31D14428700D6CFC6 /* AMPlayer.m */,
-				4F1269F41D14428700D6CFC6 /* AMRecorder.h */,
-				4F1269F51D14428700D6CFC6 /* AMRecorder.m */,
-				4F1269F81D1442D400D6CFC6 /* Header.h */,
 				4F1269E91D11C22900D6CFC6 /* CoreAudio.framework */,
 				4F1269E51D11C21400D6CFC6 /* Accelerate.framework */,
 				4F1269E61D11C21400D6CFC6 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F77D3A51D148D9900D3DBA6 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				4F77D3A71D148E1500D3DBA6 /* PlayerController.h */,
+				4F77D3A81D148E1500D3DBA6 /* PlayerController.m */,
+				4F1269F21D14428700D6CFC6 /* AudioPlayer.h */,
+				4F1269F31D14428700D6CFC6 /* AudioPlayer.m */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+		4F77D3A61D148DA500D3DBA6 /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				4F1269F41D14428700D6CFC6 /* AMRecorder.h */,
+				4F1269F51D14428700D6CFC6 /* AMRecorder.m */,
+			);
+			name = Recorder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +197,8 @@
 				4F1269D41D11BCAA00D6CFC6 /* ViewController.swift in Sources */,
 				4F1269F71D14428700D6CFC6 /* AMRecorder.m in Sources */,
 				4F1269D21D11BCAA00D6CFC6 /* AppDelegate.swift in Sources */,
-				4F1269F61D14428700D6CFC6 /* AMPlayer.m in Sources */,
+				4F1269F61D14428700D6CFC6 /* AudioPlayer.m in Sources */,
+				4F77D3A91D148E1500D3DBA6 /* PlayerController.m in Sources */,
 				4F1269ED1D13A38100D6CFC6 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
