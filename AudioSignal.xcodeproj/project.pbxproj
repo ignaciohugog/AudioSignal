@@ -12,6 +12,12 @@
 		4F1269D71D11BCAA00D6CFC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1269D51D11BCAA00D6CFC6 /* Main.storyboard */; };
 		4F1269D91D11BCAA00D6CFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F1269D81D11BCAA00D6CFC6 /* Assets.xcassets */; };
 		4F1269DC1D11BCAA00D6CFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1269DA1D11BCAA00D6CFC6 /* LaunchScreen.storyboard */; };
+		4F1269E71D11C21400D6CFC6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1269E51D11C21400D6CFC6 /* Accelerate.framework */; };
+		4F1269E81D11C21400D6CFC6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1269E61D11C21400D6CFC6 /* AudioToolbox.framework */; };
+		4F1269EA1D11C22900D6CFC6 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1269E91D11C22900D6CFC6 /* CoreAudio.framework */; };
+		4F1269ED1D13A38100D6CFC6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269EC1D13A38100D6CFC6 /* Utils.swift */; };
+		4F1269F61D14428700D6CFC6 /* AMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269F31D14428700D6CFC6 /* AMPlayer.m */; };
+		4F1269F71D14428700D6CFC6 /* AMRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269F51D14428700D6CFC6 /* AMRecorder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,16 @@
 		4F1269D81D11BCAA00D6CFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F1269DB1D11BCAA00D6CFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F1269DD1D11BCAA00D6CFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F1269E51D11C21400D6CFC6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		4F1269E61D11C21400D6CFC6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4F1269E91D11C22900D6CFC6 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		4F1269EC1D13A38100D6CFC6 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4F1269EE1D143FBF00D6CFC6 /* AudioSignal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioSignal-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F1269F21D14428700D6CFC6 /* AMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPlayer.h; sourceTree = "<group>"; };
+		4F1269F31D14428700D6CFC6 /* AMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPlayer.m; sourceTree = "<group>"; };
+		4F1269F41D14428700D6CFC6 /* AMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMRecorder.h; sourceTree = "<group>"; };
+		4F1269F51D14428700D6CFC6 /* AMRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMRecorder.m; sourceTree = "<group>"; };
+		4F1269F81D1442D400D6CFC6 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +45,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1269EA1D11C22900D6CFC6 /* CoreAudio.framework in Frameworks */,
+				4F1269E71D11C21400D6CFC6 /* Accelerate.framework in Frameworks */,
+				4F1269E81D11C21400D6CFC6 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +73,32 @@
 		4F1269D01D11BCAA00D6CFC6 /* AudioSignal */ = {
 			isa = PBXGroup;
 			children = (
+				4F1269EB1D11C2DA00D6CFC6 /* Frameworks */,
 				4F1269D11D11BCAA00D6CFC6 /* AppDelegate.swift */,
 				4F1269D31D11BCAA00D6CFC6 /* ViewController.swift */,
+				4F1269EC1D13A38100D6CFC6 /* Utils.swift */,
 				4F1269D51D11BCAA00D6CFC6 /* Main.storyboard */,
 				4F1269D81D11BCAA00D6CFC6 /* Assets.xcassets */,
 				4F1269DA1D11BCAA00D6CFC6 /* LaunchScreen.storyboard */,
 				4F1269DD1D11BCAA00D6CFC6 /* Info.plist */,
+				4F1269EE1D143FBF00D6CFC6 /* AudioSignal-Bridging-Header.h */,
 			);
 			path = AudioSignal;
+			sourceTree = "<group>";
+		};
+		4F1269EB1D11C2DA00D6CFC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F1269F21D14428700D6CFC6 /* AMPlayer.h */,
+				4F1269F31D14428700D6CFC6 /* AMPlayer.m */,
+				4F1269F41D14428700D6CFC6 /* AMRecorder.h */,
+				4F1269F51D14428700D6CFC6 /* AMRecorder.m */,
+				4F1269F81D1442D400D6CFC6 /* Header.h */,
+				4F1269E91D11C22900D6CFC6 /* CoreAudio.framework */,
+				4F1269E51D11C21400D6CFC6 /* Accelerate.framework */,
+				4F1269E61D11C21400D6CFC6 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1269D41D11BCAA00D6CFC6 /* ViewController.swift in Sources */,
+				4F1269F71D14428700D6CFC6 /* AMRecorder.m in Sources */,
 				4F1269D21D11BCAA00D6CFC6 /* AppDelegate.swift in Sources */,
+				4F1269F61D14428700D6CFC6 /* AMPlayer.m in Sources */,
+				4F1269ED1D13A38100D6CFC6 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AudioSignal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IGN.AudioSignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioSignal/AudioSignal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -263,10 +306,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AudioSignal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IGN.AudioSignal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioSignal/AudioSignal-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -289,6 +334,7 @@
 				4F1269E21D11BCAA00D6CFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
