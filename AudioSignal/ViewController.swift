@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		recordState.startRecording()
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.update(_:)), name: "incoming", object: nil)
 		// Do any additional setup after loading the view, typically from a nib.
 	}
@@ -30,22 +31,43 @@ class ViewController: UIViewController {
 
 
 	@IBAction func sendClicked(sender: AnyObject) {
-		//receiveTextView.text = sendTextView.text
-		playState.playMessage("hello world!")
-
-
+		// TODO: when stop sending start recorder again
+		if let message = sendTextView.text {
+			recordState.stopRecording()
+			playState.playMessage("@"+message+"@")
+		}
 	}
 
 	@IBAction func receiveClicked(sender: AnyObject) {
 		
-		recordState.startRecording()
+		//recordState.startRecording()
 	}
 
 	func update(notification: NSNotification) {
-		if let userInfo = notification.userInfo {
-			receiveTextView.text = userInfo["text"] as? String
+		let message = notification.userInfo!["text"] as! String
+		if checker(message) {
+			recordState.stopRecording()
+			showAlert(message)
+			receiveTextView.text = message
+		}else{
+			print(message)
+			recordState.startRecording()
 		}
 	}
+
+	func showAlert(message:String) {
+		let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+		alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler: { action in
+			self.recordState.startRecording()
+		}))
+		self.presentViewController(alert, animated: true, completion: nil)
+	}
+
+	func checker(message: String) -> Bool {
+		return message.characters.first == "@" && message.characters.last == "@"
+	}
+
+
 
 }
 

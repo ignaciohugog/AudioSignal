@@ -14,5 +14,6 @@
 @property (nonatomic, assign) AQRecordState recordState;
 
 - (void)startRecording;
+- (void)stopRecording;
 
 @end

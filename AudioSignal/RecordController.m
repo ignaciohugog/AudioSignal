@@ -51,18 +51,11 @@ void fillVector() {
 	}
 }
 
-void HandleInputBuffer(void * inUserData,
-											 AudioQueueRef inAQ,
-											 AudioQueueBufferRef inBuffer,
-											 const AudioTimeStamp * inStartTime,
-											 UInt32 inNumPackets,
-											 const AudioStreamPacketDescription * inPacketDesc) {
+void HandleInputBuffer(void * inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer, const AudioTimeStamp * inStartTime, UInt32 inNumPackets, const AudioStreamPacketDescription * inPacketDesc) {
 	AQRecordState * pRecordState = (AQRecordState *)inUserData;
-
 	if (inNumPackets == 0 && pRecordState->mDataFormat.mBytesPerPacket != 0) {
 		inNumPackets = inBuffer->mAudioDataByteSize / pRecordState->mDataFormat.mBytesPerPacket;
 	}
-
 	if ( ! pRecordState->mIsRunning) {
 		return;
 	}
@@ -72,11 +65,8 @@ void HandleInputBuffer(void * inUserData,
 	printf("buffer received : %1.6f from %1.6f (#%07ld) to %1.6f (#%07ld)\n", (sampleEnd - sampleStart + 1)/44100.0, sampleStart/44100.0, sampleStart, sampleEnd/44100.0, sampleEnd);
 
 		// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 	short * samples = (short *)inBuffer->mAudioData;
 	long nsamples = sampleEnd - sampleStart + 1;
-	bool found = NO;
-
 		// Convert to float
 	for (long i = 0; i < nsamples; i++) {
 		fBuffer[i] = samples[i] / (float)SHRT_MAX;
@@ -108,15 +98,9 @@ void HandleInputBuffer(void * inUserData,
 		m = 1/max;
 		vDSP_vsmul(barker, 1, &m, barker, 1, BARKER_LEN*SAMPLE_PER_BIT);
 
-#define FILTERS_DELAY (BARKER_LEN+2)*SAMPLE_PER_BIT
+
 		vDSP_conv(fBuffer, 1, barker, 1, corr, 1, nsamples-FILTERS_DELAY, BARKER_LEN*SAMPLE_PER_BIT);
 
-
-#ifdef SHOW_CORR
-		for (long i = 0; i < nsamples-FILTERS_DELAY; i++) {
-			printf("%+1.8f\n", corr[i]);
-		}
-#endif
 
 		float cc = -1.0f;
 		unsigned long cci = 0;
@@ -144,23 +128,6 @@ void HandleInputBuffer(void * inUserData,
 				vDSP_sve(fBuffer+cci+i*SAMPLE_PER_BIT, 1, integral+i, SAMPLE_PER_BIT);
 			}
 		}
-
-			// Decision
-#ifdef SHOW_FRAMES
-		for (long i = 13; i < nsamples/SAMPLE_PER_BIT; i += 12) {
-			if (integral[i]>0 || integral[i+10]>0 || integral[i+11]>0) {
-				break;
-			}
-			printf("%d ", integral[i]>0);
-			for (int j = i+1; j < i+9; j++) {
-				printf("%d", integral[j]>0);
-			}
-			printf(" %d ", integral[i+9]>0);
-			printf("%d", integral[i+10]>0);
-			printf("%d", integral[i+11]>0);
-			printf("\n");
-		}
-#endif
 
 		int i = 13;
 		char ch;
@@ -207,7 +174,6 @@ void HandleInputBuffer(void * inUserData,
 
 	if (pRecordState->mIsRunning) {
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"stop" object:nil];
-
 	}
 }
 

@@ -20,6 +20,7 @@
 #define BIT_RATE (RATE/36)
 #define SAMPLE_PER_BIT (RATE/BIT_RATE)
 #define BARKER_LEN 13
+#define FILTERS_DELAY (BARKER_LEN+2)*SAMPLE_PER_BIT
 #define CORR_MAX_COEFF 0.9
 #define kNumberBuffers 3
 
@@ -62,7 +63,6 @@ typedef struct {
 } AQRecordState;
 
 static char strbuf[BIT_RATE] = {'\n'};
-
 static float * barker;
 static float * fBuffer;
 static float * integral;

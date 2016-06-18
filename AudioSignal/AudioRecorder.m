@@ -11,7 +11,7 @@
 @implementation AudioRecorder
 
 - (void)startRecording {
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopRecording) name:@"stop" object:nil];
+		//	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopRecording) name:@"stop" object:nil];
 	[RecordController setupAudioFormat:&_recordState];
 	_recordState.mCurrentPacket = 0;
 	[RecordController initRecorder];
