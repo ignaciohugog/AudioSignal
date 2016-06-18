@@ -7,6 +7,10 @@
 //
 
 #import <AudioToolbox/AudioToolbox.h>
+#import <Foundation/Foundation.h>
+#include <limits.h>
+#include <Accelerate/Accelerate.h>
+
 
 #ifndef Header_h
 #define Header_h
@@ -47,6 +51,22 @@ static unsigned char playerBarkerbin[BARKER_LEN] = {
 };
 
 	// Recorder
+
+typedef struct {
+	AudioStreamBasicDescription mDataFormat;
+	AudioQueueRef mQueue;
+	AudioQueueBufferRef mBuffers[kNumberBuffers];
+	UInt32 bufferByteSize;
+	SInt64 mCurrentPacket;
+	bool mIsRunning;
+} AQRecordState;
+
+static char strbuf[BIT_RATE] = {'\n'};
+
+static float * barker;
+static float * fBuffer;
+static float * integral;
+static float * corr;
 
 static const bool recorderParityTable256[256] =
 {

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var receiveTextView: UITextField!
 
 	var playState = AudioPlayer()
-	var recordState = AMRecorder()
+	var recordState = AudioRecorder()
 
 
 	override func viewDidLoad() {

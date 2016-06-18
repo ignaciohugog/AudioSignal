@@ -7,9 +7,8 @@
 //
 //INFO: https://developer.apple.com/library/ios/documentation/MusicAudio/Conceptual/AudioQueueProgrammingGuide/AQPlayback/PlayingAudio.html
 
-#import <Foundation/Foundation.h>
-#import "PlayerController.h"
 #import "Header.h"
+#import "PlayerController.h"
 
 @interface AudioPlayer : NSObject
 @property (nonatomic, assign) AQPlayState playState;
