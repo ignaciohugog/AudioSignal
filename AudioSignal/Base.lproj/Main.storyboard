@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,6 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jRp-lU-4Ot">
+                                <rect key="frame" x="0.0" y="-8" width="600" height="608"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-1t-cxP">
                                 <rect key="frame" x="120" y="40" width="437" height="30"/>
                                 <color key="backgroundColor" red="0.90088197206475096" green="0.86409225473596218" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,12 +61,16 @@
                         <color key="backgroundColor" red="0.51764705879999995" green="0.76078431369999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PEx-1t-cxP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="4t9-z1-13l"/>
+                            <constraint firstAttribute="trailing" secondItem="jRp-lU-4Ot" secondAttribute="trailing" id="KGh-0y-gt7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jRp-lU-4Ot" secondAttribute="bottom" id="RDE-yW-HKN"/>
                             <constraint firstItem="Daf-NE-dsj" firstAttribute="leading" secondItem="eMt-8X-CSc" secondAttribute="trailing" constant="-5" id="cJj-QZ-zlZ"/>
                             <constraint firstItem="eMt-8X-CSc" firstAttribute="centerY" secondItem="PEx-1t-cxP" secondAttribute="centerY" id="cqM-f5-gbm"/>
+                            <constraint firstItem="jRp-lU-4Ot" firstAttribute="topMargin" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="dWu-fN-Cjk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PEx-1t-cxP" secondAttribute="trailing" constant="23" id="fVX-SX-Fcb"/>
                             <constraint firstItem="Daf-NE-dsj" firstAttribute="bottom" secondItem="eMt-8X-CSc" secondAttribute="bottom" id="g1i-dq-7C6"/>
                             <constraint firstItem="P5I-d9-cTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iX9-Wa-nHX"/>
                             <constraint firstItem="P5I-d9-cTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jjP-Cs-SdK"/>
+                            <constraint firstItem="jRp-lU-4Ot" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kCX-OA-OUe"/>
                             <constraint firstItem="PEx-1t-cxP" firstAttribute="leading" secondItem="Daf-NE-dsj" secondAttribute="trailing" constant="20" id="uWz-RM-hwn"/>
                             <constraint firstItem="Daf-NE-dsj" firstAttribute="top" secondItem="eMt-8X-CSc" secondAttribute="bottom" constant="-15" id="xwB-ew-1Vg"/>
                             <constraint firstItem="eMt-8X-CSc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="zpj-IK-Dai"/>
@@ -79,4 +87,7 @@
             <point key="canvasLocation" x="-278" y="136"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg" width="1080" height="1920"/>
+    </resources>
 </document>

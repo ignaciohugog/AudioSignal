@@ -19,6 +19,8 @@
 		4F1269ED1D13A38100D6CFC6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269EC1D13A38100D6CFC6 /* Utils.swift */; };
 		4F1269F61D14428700D6CFC6 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269F31D14428700D6CFC6 /* AudioPlayer.m */; };
 		4F1269F71D14428700D6CFC6 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1269F51D14428700D6CFC6 /* AudioRecorder.m */; };
+		4F26EF871D1CF8B400E909ED /* iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F26EF861D1CF8B400E909ED /* iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg */; };
+		4F26EF891D1CFAAB00E909ED /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F26EF881D1CFAAB00E909ED /* logo.png */; };
 		4F77D3A91D148E1500D3DBA6 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F77D3A81D148E1500D3DBA6 /* PlayerController.m */; };
 		4FAD2ED01D15B436006239A7 /* RecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD2ECF1D15B436006239A7 /* RecordController.m */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,8 @@
 		4F1269F51D14428700D6CFC6 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
 		4F1269F81D1442D400D6CFC6 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4F26EF841D1CE82500E909ED /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = "../../Library/Developer/Xcode/DerivedData/AudioSignal-cxljgpuxdnecobauphdjordrbapw/Build/Products/Debug-iphonesimulator/NVActivityIndicatorView.framework"; sourceTree = "<group>"; };
+		4F26EF861D1CF8B400E909ED /* iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg"; path = "../../../../../Volumes/Macintosh HD/Users/ignacio/Downloads/iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg"; sourceTree = "<group>"; };
+		4F26EF881D1CFAAB00E909ED /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = "../../../../../Volumes/Macintosh HD/Users/ignacio/Downloads/logo.png"; sourceTree = "<group>"; };
 		4F77D3A71D148E1500D3DBA6 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
 		4F77D3A81D148E1500D3DBA6 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 		4FAD2ECE1D15B436006239A7 /* RecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordController.h; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				4F77D3A51D148D9900D3DBA6 /* Player */,
 				4F1269F81D1442D400D6CFC6 /* Header.h */,
 				4F1269D31D11BCAA00D6CFC6 /* ViewController.swift */,
+				4F26EF861D1CF8B400E909ED /* iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg */,
+				4F26EF881D1CFAAB00E909ED /* logo.png */,
 				4F1269EC1D13A38100D6CFC6 /* Utils.swift */,
 				4F1269D51D11BCAA00D6CFC6 /* Main.storyboard */,
 				4F1269D81D11BCAA00D6CFC6 /* Assets.xcassets */,
@@ -215,6 +221,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F26EF871D1CF8B400E909ED /* iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg in Resources */,
+				4F26EF891D1CFAAB00E909ED /* logo.png in Resources */,
 				4F1269DC1D11BCAA00D6CFC6 /* LaunchScreen.storyboard in Resources */,
 				4F1269D91D11BCAA00D6CFC6 /* Assets.xcassets in Resources */,
 				4F1269D71D11BCAA00D6CFC6 /* Main.storyboard in Resources */,
