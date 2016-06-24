@@ -7,18 +7,29 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class ViewController: UIViewController {
 
 	@IBOutlet weak var sendTextView: UITextField!
-	@IBOutlet weak var receiveTextView: UITextField!
 
+	@IBOutlet weak var activityIndicator: NVActivityIndicatorView!
+	@IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
 	var playState = AudioPlayer()
 	var recordState = AudioRecorder()
 
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		activityIndicator.type = .BallPulse
+		activityIndicator.color = UIColor.blackColor()
+		activityIndicator.hidesWhenStopped = true
+
+
+		activityIndicatorView.type = .LineScale
+		activityIndicatorView.color = UIColor.blackColor()
+		activityIndicatorView.hidesWhenStopped = true
+
 		recordState.startRecording()
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.update(_:)), name: "incoming", object: nil)
 		// Do any additional setup after loading the view, typically from a nib.
@@ -35,22 +46,20 @@ class ViewController: UIViewController {
 		if sender.selected {
 			recordState.stopRecording()
 			playState.playMessage("@"+self.sendTextView.text!+"@")
+			activityIndicator.startAnimation()
+			activityIndicatorView.startAnimation()
 		}else{
+			activityIndicator.stopAnimation()
+			activityIndicatorView.stopAnimation()
 			playState.stopPlaying();
 			recordState.startRecording()
 		}
-	}
-
-	@IBAction func receiveClicked(sender: AnyObject) {
-		
-		//recordState.startRecording()
 	}
 
 	func update(notification: NSNotification) {
 		let message = notification.userInfo!["text"] as! String
 		if checker(message) {
 			showAlert(message)
-			receiveTextView.text = message
 		}else{
 			print(message)
 		}

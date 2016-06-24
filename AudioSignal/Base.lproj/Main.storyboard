@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,41 +18,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-1t-cxP">
-                                <rect key="frame" x="177" y="83" width="146" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-1t-cxP">
+                                <rect key="frame" x="120" y="40" width="437" height="30"/>
+                                <color key="backgroundColor" red="0.90088197206475096" green="0.86409225473596218" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTY-wX-PZg">
-                                <rect key="frame" x="226" y="213" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-lk-Z9c">
-                                <rect key="frame" x="94" y="206" width="54" height="30"/>
-                                <state key="normal" title="Receive"/>
-                                <connections>
-                                    <action selector="receiveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HL2-au-T35"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMt-8X-CSc">
-                                <rect key="frame" x="103" y="82" width="36" height="30"/>
-                                <state key="normal" title="Send"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMt-8X-CSc">
+                                <rect key="frame" x="27" y="37" width="47" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" title="Sending"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="sendClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfr-wW-Tqa"/>
                                 </connections>
                             </button>
+                            <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5I-d9-cTS" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="43" y="241" width="514" height="118"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="514" id="XXk-Xk-G8V"/>
+                                    <constraint firstAttribute="height" constant="118" id="byA-SX-KyH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-NE-dsj" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="69" y="58" width="31" height="15"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="Vz2-oz-gCO"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.51764705879999995" green="0.76078431369999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PEx-1t-cxP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="4t9-z1-13l"/>
+                            <constraint firstItem="Daf-NE-dsj" firstAttribute="leading" secondItem="eMt-8X-CSc" secondAttribute="trailing" constant="-5" id="cJj-QZ-zlZ"/>
+                            <constraint firstItem="eMt-8X-CSc" firstAttribute="centerY" secondItem="PEx-1t-cxP" secondAttribute="centerY" id="cqM-f5-gbm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PEx-1t-cxP" secondAttribute="trailing" constant="23" id="fVX-SX-Fcb"/>
+                            <constraint firstItem="Daf-NE-dsj" firstAttribute="bottom" secondItem="eMt-8X-CSc" secondAttribute="bottom" id="g1i-dq-7C6"/>
+                            <constraint firstItem="P5I-d9-cTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iX9-Wa-nHX"/>
+                            <constraint firstItem="P5I-d9-cTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jjP-Cs-SdK"/>
+                            <constraint firstItem="PEx-1t-cxP" firstAttribute="leading" secondItem="Daf-NE-dsj" secondAttribute="trailing" constant="20" id="uWz-RM-hwn"/>
+                            <constraint firstItem="Daf-NE-dsj" firstAttribute="top" secondItem="eMt-8X-CSc" secondAttribute="bottom" constant="-15" id="xwB-ew-1Vg"/>
+                            <constraint firstItem="eMt-8X-CSc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="zpj-IK-Dai"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="receiveTextView" destination="TTY-wX-PZg" id="AnB-AW-opU"/>
+                        <outlet property="activityIndicator" destination="Daf-NE-dsj" id="bv4-3R-tvW"/>
+                        <outlet property="activityIndicatorView" destination="P5I-d9-cTS" id="ndC-vS-1kF"/>
                         <outlet property="sendTextView" destination="PEx-1t-cxP" id="QBV-Bl-Y1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="151"/>
+            <point key="canvasLocation" x="-278" y="136"/>
         </scene>
     </scenes>
 </document>
