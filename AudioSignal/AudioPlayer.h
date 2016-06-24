@@ -12,5 +12,6 @@
 
 @interface AudioPlayer : NSObject
 @property (nonatomic, assign) AQPlayState playState;
-- (void) playMessage:(NSString *)msg;
+- (void)playMessage: (NSString *)msg;
+- (void)stopPlaying;
 @end

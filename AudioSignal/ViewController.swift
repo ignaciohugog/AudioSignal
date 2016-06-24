@@ -30,11 +30,14 @@ class ViewController: UIViewController {
 	}
 
 
-	@IBAction func sendClicked(sender: AnyObject) {
-		// TODO: when stop sending start recorder again
-		if let message = sendTextView.text {
+	@IBAction func sendClicked(sender: UIButton) {
+		sender.selected = !sender.selected
+		if sender.selected {
 			recordState.stopRecording()
-			playState.playMessage("@"+message+"@")
+			playState.playMessage("@"+self.sendTextView.text!+"@")
+		}else{
+			playState.stopPlaying();
+			recordState.startRecording()
 		}
 	}
 
@@ -46,18 +49,17 @@ class ViewController: UIViewController {
 	func update(notification: NSNotification) {
 		let message = notification.userInfo!["text"] as! String
 		if checker(message) {
-			recordState.stopRecording()
 			showAlert(message)
 			receiveTextView.text = message
 		}else{
 			print(message)
-			recordState.startRecording()
 		}
 	}
 
 	func showAlert(message:String) {
 		let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
 		alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler: { action in
+			self.recordState.stopRecording()
 			self.recordState.startRecording()
 		}))
 		self.presentViewController(alert, animated: true, completion: nil)
@@ -66,8 +68,5 @@ class ViewController: UIViewController {
 	func checker(message: String) -> Bool {
 		return message.characters.first == "@" && message.characters.last == "@"
 	}
-
-
-
 }
 
