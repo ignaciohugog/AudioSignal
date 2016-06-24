@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		//TODO: rename activities indicators
 		activityIndicator.type = .BallPulse
 		activityIndicator.color = UIColor.blackColor()
 		activityIndicator.hidesWhenStopped = true
@@ -30,14 +31,15 @@ class ViewController: UIViewController {
 		activityIndicatorView.color = UIColor.blackColor()
 		activityIndicatorView.hidesWhenStopped = true
 
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+		view.addGestureRecognizer(tap)
+
 		recordState.startRecording()
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.update(_:)), name: "incoming", object: nil)
-		// Do any additional setup after loading the view, typically from a nib.
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	func dismissKeyboard() {
+		view.endEditing(true)
 	}
 
 
@@ -46,6 +48,7 @@ class ViewController: UIViewController {
 		if sender.selected {
 			recordState.stopRecording()
 			playState.playMessage("@"+self.sendTextView.text!+"@")
+			dismissKeyboard()
 			activityIndicator.startAnimation()
 			activityIndicatorView.startAnimation()
 		}else{

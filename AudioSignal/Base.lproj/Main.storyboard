@@ -22,11 +22,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jRp-lU-4Ot">
                                 <rect key="frame" x="0.0" y="-8" width="600" height="608"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-1t-cxP">
+                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6gw-zY-0FL">
+                                <rect key="frame" x="140" y="460" width="320" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="NP0-RD-m7n"/>
+                                    <constraint firstAttribute="width" constant="320" id="yXx-0g-jzd"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-1t-cxP">
                                 <rect key="frame" x="120" y="40" width="437" height="30"/>
                                 <color key="backgroundColor" red="0.90088197206475096" green="0.86409225473596218" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" playsSound="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMt-8X-CSc">
                                 <rect key="frame" x="27" y="37" width="47" height="36"/>
@@ -42,19 +52,19 @@
                                     <action selector="sendClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfr-wW-Tqa"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-NE-dsj" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="69" y="58" width="31" height="15"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="Vz2-oz-gCO"/>
+                                </constraints>
+                            </view>
                             <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5I-d9-cTS" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
                                 <rect key="frame" x="43" y="241" width="514" height="118"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="514" id="XXk-Xk-G8V"/>
                                     <constraint firstAttribute="height" constant="118" id="byA-SX-KyH"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-NE-dsj" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="69" y="58" width="31" height="15"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="31" id="Vz2-oz-gCO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -68,10 +78,12 @@
                             <constraint firstItem="jRp-lU-4Ot" firstAttribute="topMargin" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="dWu-fN-Cjk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PEx-1t-cxP" secondAttribute="trailing" constant="23" id="fVX-SX-Fcb"/>
                             <constraint firstItem="Daf-NE-dsj" firstAttribute="bottom" secondItem="eMt-8X-CSc" secondAttribute="bottom" id="g1i-dq-7C6"/>
+                            <constraint firstItem="6gw-zY-0FL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hjD-ra-NgF"/>
                             <constraint firstItem="P5I-d9-cTS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iX9-Wa-nHX"/>
                             <constraint firstItem="P5I-d9-cTS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jjP-Cs-SdK"/>
                             <constraint firstItem="jRp-lU-4Ot" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kCX-OA-OUe"/>
                             <constraint firstItem="PEx-1t-cxP" firstAttribute="leading" secondItem="Daf-NE-dsj" secondAttribute="trailing" constant="20" id="uWz-RM-hwn"/>
+                            <constraint firstItem="6gw-zY-0FL" firstAttribute="top" secondItem="jRp-lU-4Ot" secondAttribute="bottom" constant="-140" id="w8X-g8-LyR"/>
                             <constraint firstItem="Daf-NE-dsj" firstAttribute="top" secondItem="eMt-8X-CSc" secondAttribute="bottom" constant="-15" id="xwB-ew-1Vg"/>
                             <constraint firstItem="eMt-8X-CSc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="zpj-IK-Dai"/>
                         </constraints>
@@ -89,5 +101,6 @@
     </scenes>
     <resources>
         <image name="iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg" width="1080" height="1920"/>
+        <image name="logo.png" width="3071" height="1181"/>
     </resources>
 </document>
